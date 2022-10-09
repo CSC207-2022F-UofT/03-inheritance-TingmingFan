@@ -4,6 +4,7 @@
  * the TODOs we have left you. You may find the readings in chapter
  * 1. Introduction to Java helpful.
  */
+import java.util.Arrays;
 
 public abstract class Bag {
     /*
@@ -118,13 +119,7 @@ public abstract class Bag {
     public void increaseCapacity(int n) {
         // TODO: Implement this method.
         capacity += n;
-        String[] X =  new String[capacity];
-        for (int i = 0; i < contents.length; i++) {
-             X[i] = contents[i];
-        }
-        contents = X;
-
-    }
+        contents = Arrays.copyOf(contents, contents.length + n);}
 
     /**
      * Return the details of this Bag.
